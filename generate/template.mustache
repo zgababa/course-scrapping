@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+  .post-container {
+    margin: 20px 20px 0 0;
+    border: 5px solid #333;
+    overflow: auto;
+  }
+  .post-thumb {
+    float: left;
+  }
+  .post-thumb img {
+    display: block;
+  }
+  .post-content {
+    margin-left: 210px;
+  }
+  .post-title {
+    font-weight: bold;
+    font-size: 200%;
+  }
+  p {
+    font-size: 22px;
+  }
+</style>
+</head>
+<body>
+  {{#.}}
+    <div class="post-container">
+      <div class="post-thumb"><img src="{{img}}"/></div>
+      <div class="post-content">
+          <h3 class="post-title">{{name}}</h3>
+          <p>{{frequency}} % - Dans {{recurence}} commandes</p>
+          <p>Total : {{quantity}}</p>
+      </div>
+    </div>
+  {{/.}}
+</body>
+</html>
