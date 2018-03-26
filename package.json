@@ -6,8 +6,8 @@
   "scripts": {
     "mostOrdered": "mustache ./src/scrapping/cart/orders.json ./src/scrapping/cart/generate/template.mustache > ./src/scrapping/cart/generate/result.html",
     "initDB": "node src/utils/syncDb.js && sequelize db:seed:all",
-    "getProduct": "node src/scrapping/product/product.js",
-    "getCategory": "node src/scrapping/category/category.js",
+    "getProducts": "node product/product.js",
+    "getCategories": "node category/categoryRoot.js && node category/category.js",
     "lint": "eslint --cache --fix --ext .js ."
   },
   "author": "",

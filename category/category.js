@@ -52,6 +52,7 @@ const topRoot = tree.parse({
 
 buildTree(topRoot, rootPage);
 crawler.on('drain', () => {
+  // Retour en fichier
   fs.writeFileSync(path.join(__dirname, 'category.json'), JSON.stringify(topRoot.model, null, 2), 'utf-8');
   process.exit();
 });
