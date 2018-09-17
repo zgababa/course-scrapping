@@ -1,14 +1,13 @@
 {
-  "name": "course",
+  "name": "scrapping",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "mostOrdered": "mustache ./src/scrapping/cart/orders.json ./src/scrapping/cart/generate/template.mustache > ./src/scrapping/cart/generate/result.html",
-    "initDB": "node src/utils/syncDb.js && sequelize db:seed:all",
-    "getProducts": "node product/product.js",
+    "getProductPages": "node product/productPages.js",
     "getCategories": "node category/categoryRoot.js && node category/category.js",
-    "lint": "eslint --cache --fix --ext .js ."
+    "lint": "eslint --cache --fix --ext .js .",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,16 +18,15 @@
     "config": "^1.26.2",
     "crawler": "^1.0.5",
     "dotenv": "^4.0.0",
+    "express": "^4.16.3",
     "lodash": "^4.17.4",
+    "mongodb": "^3.0.5",
     "mustache": "^2.3.0",
     "nodemon": "^1.11.0",
     "pg": "6.4.2",
     "phantomjs": "^2.1.7",
-    "prisma": "^1.3.5",
     "request": "^2.81.0",
     "request-promise": "^4.2.1",
-    "sequelize": "^4.35.2",
-    "sequelize-cli": "^4.0.0",
     "tough-cookie": "^2.3.2",
     "tree-flatten": "^1.0.0",
     "tree-model": "^1.0.6",
@@ -41,5 +39,6 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0"
-  }
+  },
+  "description": ""
 }

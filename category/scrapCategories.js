@@ -15,17 +15,17 @@ const fileName = fs.readFileSync(path.join(__dirname, 'categoryRoot.html'));
 
 function scrapCategories() {
   return new Promise((resolve) => {
-    function addChildToNode(toto, $1) {
+    function addChildToNode(parentRoot, $1) {
       $1('#house-search-department-filter ul li')
         .each((index, value) => {
           const title = $1(value).find('span').text().trim();
           const url = `https://primenow.amazon.fr${decodeURIComponent($1(value).find('input').val())}`;
           if (index) {
             const node = tree.parse({ title, url });
-            toto.addChild(node);
+            parentRoot.addChild(node);
           }
         });
-      return toto;
+      return parentRoot;
     }
 
     function buildTree(root, $) {
